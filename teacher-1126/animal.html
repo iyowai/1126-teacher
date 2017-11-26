@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="masonry.pkgd.min.js"></script>
+    <script src="imagesloaded.pkgd.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $.ajax({
+                url: "animal.json",
+                success: function(e) {
+                    $(e).each(function() {
+                        //                       console.log(this.Name);
+                        if (this.Name == "") {
+                            this.Name = "無名氏"
+                        }
+                        var content = "<div class='box'>"
+                        content += "<div class='title'>姓名：" + this.Name + "</div>"
+                        content += "<div class='sex'>性別：" + this.Sex + "</div>"
+                        content += "<div class='type'>種類：" + this.Type + "</div>"
+                        content += "<div class='hairtype'>毛色：" + this.HairType + "</div>"
+                        content += "<div class='age'>年齡：" + this.Age + "</div>"
+                        content += "<div class='variety'>品種：" + this.Variety + "</div>"
+                        content += "<div class='pic'><img src='" + this.ImageName + "'></div>"
+                        content += "</div>"
+
+                        $(".output").append(content);
+                        $(".output").imagesLoaded(function(){
+                            $(".output").masonry({
+                                isFitWidth:true
+                            })
+                        })
+                    });
+                },
+                error: function() {
+                    console.log("error");
+                }
+            })
+        })
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #ccc;
+        }
+        .output {
+/*            width: 800px;*/
+            margin: auto;
+        }
+
+        .box {
+            float: left;
+            width: 300px;
+/*            height: 500px;*/
+            margin: 10px;
+            border: 1px solid #000;
+/*            padding: 10px;*/
+/*            background-color: #c7c7c7;*/
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="output">
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="fancy/jquery.fancybox.css">
+    <script src="jquery-1.12.4.min.js"></script>
+    <script src="masonry.pkgd.min.js"></script>
+    <script src="imagesloaded.pkgd.min.js"></script>
+    <script src="fancy/jquery.fancybox.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".container").imagesLoaded(function(){
+                $(".container").masonry({
+                    isFitWidth: true
+                });
+            });
+        })
+    </script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            width: 100%;
+        }
+        .container {
+/*            width: 960px;*/
+            margin: auto;
+        }
+        .box {
+            width: 300px;
+            background-color: #d9d9d9;
+/*            padding: 15px;*/
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <a href="../images/001.jpg" data-fancybox="qq"><img src="../images/001.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="../images/s-2.jpg" data-fancybox="qq"><img src="../images/s-2.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="../images/03.jpg" data-fancybox="qq"><img src="../images/03.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="../images/04.jpg" data-fancybox="qq"><img src="../images/04.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="../images/s-5.jpg" data-fancybox="qq"><img src="../images/s-5.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="../images/005.jpg" data-fancybox="qq"><img src="../images/005.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="../images/05.jpg" data-fancybox="qq"><img src="../images/05.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="../images/003.jpg" data-fancybox="qq"><img src="../images/003.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="../images/02.jpg" data-fancybox="qq"><img src="../images/02.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="../images/s-8.jpg" data-fancybox="qq"><img src="../images/s-8.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="../images/006.jpg" data-fancybox="qq"><img src="../images/006.jpg" alt=""></a>
+        </div>
+        <div class="box">
+            <a href="../images/07.jpg" data-fancybox="qq"><img src="../images/07.jpg" alt=""></a>
+        </div>
+
+    </div>
+</body>
+</html>
